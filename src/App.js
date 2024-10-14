@@ -6,7 +6,7 @@ import Leaderboard from './components/Leaderboard';
 import { io } from 'socket.io-client';
 import './App.css'; // Importing the CSS file
 
-const socket = io('http://localhost:5000');
+const socket = io('https://leaderboard-backend-oa7n.onrender.com/');
 
 const App = () => {
     const [users, setUsers] = useState([]);
@@ -29,7 +29,7 @@ const App = () => {
     const fetchUsers = async () => {
         setLoading(true);
         try {
-            const response = await axios.get('http://localhost:5000/api/users');
+            const response = await axios.get('https://leaderboard-backend-oa7n.onrender.com/');
             setUsers(response.data);
         } catch (error) {
             console.error('Error fetching users:', error);
@@ -40,7 +40,7 @@ const App = () => {
 
     const handleClaim = async (userId) => {
         try {
-            await axios.post('http://localhost:5000/api/claims/claim', { userId });
+            await axios.post('https://leaderboard-backend-oa7n.onrender.com/', { userId });
             // No need to manually refresh as the socket will update in real-time
         } catch (error) {
             console.error('Error claiming points:', error);
