@@ -1,38 +1,213 @@
-.App {
+/* Resetting default browser styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 
+      sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f4f9; /* Soft background color */
+  color: #545353; /* Default text color */
+}
+
+/* App container styles */
+.app-container {
+  max-width: 800px;
+  margin: 10px auto; /* Reduced margin */
+  padding: 10px; /* Reduced padding */
+  background-color: #726f92e9; /* White background for main content */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Title styles */
+.app-title {
   text-align: center;
+  color: #0e2349; /* Blue color for title */
+  font-size: 2.2rem; /* Slightly smaller font size */
+  margin-bottom: 10px; /* Reduced spacing below title */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* User controls section */
+.user-controls {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Loading text style */
+.loading {
+  text-align: center;
+  font-size: 1rem; /* Slightly smaller font size */
+  color: #666; /* Gray color for loading text */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Button styles */
+button {
+  padding: 8px 16px; /* Reduced padding */
+  margin: 5px; /* Reduced margin */
+  background-color: #e679c3; /* Green background for buttons */
+  color: white; /* White text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #68b198; /* Darker green on hover */
+}
+
+/* User List and Leaderboard styles */
+.user-list, .leaderboard {
+  margin-top: 10px; /* Reduced margin */
+  padding: 5px; /* Reduced padding */
+  background-color: #e7f3fe; /* Light blue background */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Slight shadow */
+}
+
+/* Styling for user list items */
+.user-list-item {
+  padding: 8px; /* Reduced padding */
+  border-bottom: 1px solid #ddd; /* Light gray border between items */
+}
+
+.user-list-item:last-child {
+  border-bottom: none; /* Remove border for the last item */
+}
+
+/* User List Container */
+.user-list-container {
+  margin: 10px 0; /* Reduced spacing around the user list */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items */
+}
+
+/* User Select Dropdown */
+.user-select {
+  padding: 8px; /* Reduced padding */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+  margin-bottom: 5px; /* Reduced spacing below select */
+  width: 100%; /* Full width */
+  max-width: 300px; /* Max width for dropdown */
+  background-color: #f9f9f9; /* Light background color */
+}
+
+/* Add User Button */
+.add-user-button {
+  padding: 8px 16px; /* Reduced padding */
+  background-color: #089d0d; /* Green background */
+  color: white; /* White text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+/* Button Hover Effect */
+.add-user-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Leaderboard Container */
+.leaderboard-container {
+  margin: 10px; /* Reduced margin around the leaderboard */
+  text-align: center; /* Center align text */
+  background-color: #f0f8ff; /* Light blue background for the container */
+  border-radius: 10px; /* Rounded corners for the container */
+  padding: 10px; /* Reduced padding inside the container */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+/* Leaderboard Title */
+.leaderboard-title {
+  font-size: 2.2rem; /* Slightly smaller title font size */
+  margin-bottom: 10px; /* Reduced spacing below title */
+  color: #2c3e50; /* Dark blue color for title */
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6); /* Light shadow for title */
+}
+
+/* Leaderboard Table */
+.leaderboard-table {
+  width: 100%; /* Full width of the container */
+  max-width: 600px; /* Maximum width for the table */
+  margin: 0 auto; /* Center align the table */
+  border-collapse: collapse; /* Merge borders of table cells */
+  border-radius: 10px; /* Rounded corners for the table */
+  overflow: hidden; /* Prevent overflow for rounded corners */
+}
+
+/* Table Header */
+.leaderboard-table th {
+  background-color: #3498db; /* Bright blue background for header */
+  color: white; /* White text for header */
+  padding: 10px; /* Reduced padding inside header cells */
+  border: 1px solid #2980b9; /* Darker blue border */
+  font-weight: bold; /* Bold text for header */
+}
+
+/* Table Body */
+.leaderboard-table td {
+  padding: 10px; /* Reduced padding inside data cells */
+  border: 1px solid #ddd; /* Light gray border */
+}
+
+/* Table Row Hover Effect */
+.leaderboard-table tr:hover {
+  background-color: #ecf0f1; /* Light gray background on hover */
+}
+
+/* Colorful Row Styles */
+.leaderboard-table tr:nth-child(odd) {
+  background-color: #e8f8f5; /* Light turquoise background for odd rows */
+}
+
+.leaderboard-table tr:nth-child(even) {
+  background-color: #f9f2f4; /* Light pink background for even rows */
+}
+
+/* Rank Column Styling */
+.leaderboard-table td:first-child {
+  font-weight: bold; /* Bold text for the rank */
+  color: #e74c3c; /* Red color for the rank */
+}
+
+/* User Name Styling */
+.leaderboard-table td:nth-child(2) {
+  color: #27ae60; /* Green color for user names */
+}
+
+/* Points Column Styling */
+.leaderboard-table td:last-child {
+  color: #8e44ad; /* Purple color for points */
+  font-weight: bold; /* Bold text for points */
+}
+
+/* Claim Button Styles */
+.claim-button {
+  background-color: #89a16f; /* Bright blue background */
+  color: white; /* White text */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 8px 16px; /* Reduced padding */
+  font-size: 1rem; /* Slightly smaller font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition effects */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+/* Button Hover Effect */
+.claim-button:hover {
+  background-color: hsla(226, 30%, 32%, 0.977); /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Button Active Effect */
+.claim-button:active {
+  transform: translateY(1px); /* Slight push down on click */
 }
